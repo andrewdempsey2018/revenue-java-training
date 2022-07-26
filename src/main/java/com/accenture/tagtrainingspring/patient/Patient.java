@@ -1,32 +1,18 @@
 package com.accenture.tagtrainingspring.patient;
 
+import java.time.LocalDate;
+
 public class Patient {
 
     String name;
-    String id;
-    String dob;
-    String gender;
+    int id;
+    LocalDate dateOfBirth;
+    Gender gender;
 
-    public Patient(String name, String id, String dob, String gender) {
+    public Patient(String name, int id, LocalDate dateOfBirth, Gender gender) {
         this.name = name;
         this.id = id;
-        this.dob = dob;
-        this.gender = gender;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
-    public void setGender(String gender) {
+        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
     }
 
@@ -34,15 +20,31 @@ public class Patient {
         return name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getDob() {
-        return dob;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }
