@@ -25,7 +25,7 @@ public class TagTrainingSpringApplication {
         Patient p4 = new Patient("Mary", 111, LocalDate.of(99, 5, 10), Gender.FEMALE);
 
         //create some test screenings
-        Screening s = new Screening(456, p, LocalDate.of(22, 7, 22), false);
+        Screening s = new Screening(123, p, LocalDate.of(22, 7, 22), false);
         Screening s2 = new Screening(543, p2, LocalDate.of(23, 7, 22), true);
         Screening s3 = new Screening(876, p3, LocalDate.of(24, 7, 22), false);
         Screening s4 = new Screening(675, p4, LocalDate.of(25, 7, 22), true);
@@ -34,7 +34,8 @@ public class TagTrainingSpringApplication {
         System.out.println(p.getName() + " has a malignant diagnosis of " + s.isMalignant());
         ScreeningService ss = new ScreeningService();
 
-        System.out.println("Screening " + ss.forPatient(s, p2));
+        // output weather the provided patient id matches the provided screening id
+        System.out.println("Screening " + s.getScreeningId() + " is a match of " + ss.forPatient(s, p) + " with patient: " + p.getName());
 
         // create list to hold some screenings
         List<Screening> screenList = new ArrayList<Screening>();
@@ -44,6 +45,7 @@ public class TagTrainingSpringApplication {
         screenList.add(s3);
         screenList.add(s4);
 
+        // iterate list and output contents
         for (int i = 0; i < screenList.size(); i++) {
 
             System.out.println("Screening for patient " + screenList.get(i).getPatient().getName() + ", returned a malignant result of " + screenList.get(i).isMalignant());
