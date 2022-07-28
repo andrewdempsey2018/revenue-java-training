@@ -7,13 +7,13 @@ import java.time.LocalDate;
 public class Screening {
 
     int screeningId;
-    Patient patientId;
+    Patient patient;
     LocalDate date;
     boolean malignant;
 
-    public Screening(int screeningId, Patient patientId, LocalDate date, boolean malignant) {
+    public Screening(int screeningId, Patient patient, LocalDate date, boolean malignant) {
         this.screeningId = screeningId;
-        this.patientId = patientId;
+        this.patient = patient;
         this.date = date;
         this.malignant = malignant;
     }
@@ -26,12 +26,12 @@ public class Screening {
         this.screeningId = screeningId;
     }
 
-    public Patient getPatientId() {
-        return patientId;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setPatientId(Patient patientId) {
-        this.patientId = patientId;
+    public void setPatient(Patient p) {
+        this.patient = p;
     }
 
     public LocalDate getDate() {
