@@ -8,7 +8,7 @@ public class ScreeningService {
     public ScreeningService() {
     }
 
-    boolean forPatient(Screening s, Patient p) {
+    public boolean forPatient(Screening s, Patient p) {
 
         return s.patient.getId() == p.getId();
 
