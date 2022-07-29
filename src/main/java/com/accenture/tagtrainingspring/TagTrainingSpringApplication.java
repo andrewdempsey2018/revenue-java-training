@@ -29,6 +29,19 @@ public class TagTrainingSpringApplication {
             System.out.println("Screening for patient " + screeningService.getScreenings().get(i).getPatient().getName() + ", returned a malignant result of " + screeningService.getScreenings().get(i).isMalignant());
         }
 
+
+        // add some formatting to the console window
+        System.out.println("*****************");
+
+        // Check if a screening exists for this patient
+        String patientName = "Mick";
+
+        if(screeningService.getPatientScreening(patientName) != null) {
+            System.out.println("Found a screening for patient: " + screeningService.getPatientScreening(patientName).getPatient().getName() + " with a malignant result of: " + screeningService.getPatientScreening(patientName).isMalignant());
+        } else {
+            System.out.println("No screening was found for patient: " + patientName);
+        }
+
     }
 
     private static void printWelcomeMessage() {

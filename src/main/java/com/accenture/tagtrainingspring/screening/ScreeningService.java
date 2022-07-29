@@ -22,5 +22,16 @@ public class ScreeningService {
         return screeningDatabase.getScreenings();
     }
 
+    public Screening getPatientScreening(String patientName) {
+
+        // iterate list and output contents
+        for (int i = 0; i < this.screeningDatabase.getScreenings().size(); i++) {
+
+            if (patientName == screeningDatabase.getScreenings().get(i).getPatient().getName()) {
+                return screeningDatabase.getScreenings().get(i);
+            }
+        }
+        return null;
+    }
 
 }
